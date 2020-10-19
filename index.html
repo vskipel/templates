@@ -12,24 +12,28 @@
 </head>
 
 <body class="page">
-  
 
-<main class="main">
 
-  <ul class="list-section"></ul>
+  <main class="main">
+     <form class="form">
+      <input class="input" type="text" name="link" value="" placeholder="Введи че делать?" required aria-label="введи" />
+      <button class="button-add" type="submit" aria-label="Сохранить">+</button>
+    </form>
 
-  <template class="template-card">
-    <li class="card">
-      <button class="card__button-delete" type="button" aria-label="Удалить"></button>
-      <img class="card__image" src="" alt="Изображение">
-      <div class="card__elements">
-        <h2 class="card__title"></h2>
-        <button class="card__button-like" type="button" aria-label="Лайк"></button>
-      </div>
-    </li>
-  </template>
+    <ul class="list-section"></ul>
 
-</main>
+    <template class="template-card">
+      <li class="card">
+        <button class="card__button-delete" type="button" aria-label="Удалить"></button>
+        <img class="card__image" src="" alt="Изображение">
+        <div class="card__elements">
+          <h2 class="card__title"></h2>
+          <button class="card__button-like" type="button" aria-label="Лайк"></button>
+        </div>
+      </li>
+    </template>
 
-<script src="index.js"></script>
+  </main>
+
+  <script src="index.js"></script>
 </body>

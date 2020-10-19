@@ -17,16 +17,12 @@ const todoList = [{
 ];
 
 const listSection = document.querySelector('.list-section');
+const addButton = document.querySelector('.button-add');
+const input = document.querySelector('.input');
 
 const renderList = () => {
   const items = todoList.map(element => {
-    return `
-    <li class="card">
-    <div class="card__elements">
-      <h2 class="card__title">${element.title}</h2>
-    </div>
-  </li>
-    `;
+    return getItems(element);
   }).join('');
 
   listSection.insertAdjacentHTML("afterbegin", items);
@@ -34,4 +30,23 @@ const renderList = () => {
   console.log(items);
 };
 
+const getItems = (data) => (`
+  <li class="card">
+    <div class="card__elements">
+      <h2 class="card__title">${data.title}</h2>
+    </div>
+  </li>
+  `);
+
+const bindHanlders = () => {
+  addButton.addEventListener('click', () => {
+    const item = getItems({
+      title: input.value
+    });
+    listSection.insertAdjacentHTML("afterbegin", item);
+    input.value = '';
+  });
+};
+
+bindHanlders();
 renderList();
