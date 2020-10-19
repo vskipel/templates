@@ -1,9 +1,17 @@
-.main {
+.page {
   background-color: #000;
+  background-size: 100%;
+}
+
+.main {
   color: #fff;
   display: flex;
   align-content: center;
   justify-content: center;
   height: 100%;
   width: 100%;
+}
+
+.list-section {
+  list-style: none;
 }
