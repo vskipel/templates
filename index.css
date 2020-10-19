@@ -16,6 +16,26 @@
   list-style: none;
 }
 
+.card {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.card__button-delete {
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.card__button-like {
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 
 .form {
   display: flex;

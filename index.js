@@ -1,4 +1,4 @@
-console.log('hello world')
+
 const todoList = [{
     title: '1. КСП'
   },
@@ -19,31 +19,30 @@ const todoList = [{
 const listSection = document.querySelector('.list-section');
 const addButton = document.querySelector('.button-add');
 const input = document.querySelector('.input');
+const template = document.querySelector('.template');
+
+
 
 const renderList = () => {
-  const items = todoList.map(element => {
-    return getItems(element);
-  }).join('');
+  const items = todoList.map(element => getItems(element));
+  listSection.append(...items);
+}
 
-  listSection.insertAdjacentHTML("afterbegin", items);
 
-  console.log(items);
+const getItems = (data) => {
+  const card = template.content.cloneNode(true);
+  console.log(card);
+  card.querySelector('.card__title').innerText = data.title;
+  return card;
 };
 
-const getItems = (data) => (`
-  <li class="card">
-    <div class="card__elements">
-      <h2 class="card__title">${data.title}</h2>
-    </div>
-  </li>
-  `);
 
 const bindHanlders = () => {
   addButton.addEventListener('click', () => {
     const item = getItems({
       title: input.value
     });
-    listSection.insertAdjacentHTML("afterbegin", item);
+    listSection.prepend(item);
     input.value = '';
   });
 };
